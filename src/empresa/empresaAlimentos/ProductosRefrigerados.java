@@ -1,11 +1,17 @@
 package empresa.empresaAlimentos;
 
-public class ProductosRefrigerados extends Productos{
+import java.time.LocalDate;
 
-    public ProductosRefrigerados(String fechaCaducidad, int numLote, String paisOrigen) {
-        super(fechaCaducidad, numLote, paisOrigen);
+public class ProductosRefrigerados extends Productos {
+
+    public ProductosRefrigerados(String fechaCaducidad, int numLote, String paisOrigen,
+    String fechaEnvasado, float tempMantenimiento, String codigoSupervision) {
+        super(fechaCaducidad, numLote, paisOrigen, fechaEnvasado);
+        this.fechaEnvasado = LocalDate.parse(fechaEnvasado);
+        this.tempMantenimiento = tempMantenimiento;
+        this.codigoSupervision = codigoSupervision;
     }
-    String codigoSupervision;
-    String fechaEnvasado;
+
     float tempMantenimiento;
+    String codigoSupervision;
 }

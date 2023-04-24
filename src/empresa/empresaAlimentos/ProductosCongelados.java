@@ -1,5 +1,7 @@
 package empresa.empresaAlimentos;
 
+import java.time.LocalDate;
+
 public abstract class ProductosCongelados extends Productos{
     
     // Constructor que inicializa los valores de las variables de instancia utilizando el constructor de la superclase
@@ -8,6 +10,7 @@ public abstract class ProductosCongelados extends Productos{
         // Llama al constructor de la superclase para inicializar las variables de instancia heredadas
         super(fechaCaducidad, numLote, paisOrigen, fechaEnvasado);
         this.tempMantenimiento = tempMantenimiento;
+        this.fechaEnvasado = LocalDate.parse(fechaEnvasado);
     }
     float tempMantenimiento;
 }

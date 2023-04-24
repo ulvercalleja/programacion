@@ -8,7 +8,7 @@ public class EmpresaAgroalimentaria {
     List <ProductosFrescos> listaFrescos;
     List <ProductosRefrigerados> listaRefrigerados;
     List <ProductosCongelados> listaCongelados;
-
+    
     public EmpresaAgroalimentaria(String nombre) {
         this.nombre = nombre;
         this.listaProductos = new ArrayList<>();
@@ -17,6 +17,7 @@ public class EmpresaAgroalimentaria {
         this.listaCongelados = new ArrayList<>();
       }
     
+    //metodos para añadir productos
     public void addProductosFrescos(ProductosFrescos productoFresco){
         listaFrescos.add(productoFresco);
     }

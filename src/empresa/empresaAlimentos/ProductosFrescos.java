@@ -11,5 +11,5 @@ public class ProductosFrescos extends Productos {
     super(nombre, fechaCaducidad, numLote, paisOrigen, fechaEnvasado);
     this.fechaEnvasado = LocalDate.parse(fechaEnvasado);
   }
-
+  
 }

@@ -44,5 +44,6 @@ public class MainEmpresaAgroalimentaria {
         "IT", "2023-05-26", 3, "?","1 semana");
     empresa.addProductosCongelados(congeladosPorNitro);
 
+    empresa.guardarCsv();
   }
 }

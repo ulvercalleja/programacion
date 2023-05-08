@@ -19,5 +19,9 @@ public abstract class Productos {
     this.paisOrigen = paisOrigen;
     this.fechaEnvasado = LocalDate.parse(fechaEnvasado);
   }
-
+  
+  public String toCsv() {
+    return nombre + "," + fechaCaducidad + "," + numLote
+        + "," + fechaEnvasado + "," + paisOrigen;
+  }
 }

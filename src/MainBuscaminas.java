@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import juegos.buscaminas.*;
 
-public class BuscaminasMain {
+public class MainBuscaminas {
   public static void main(String[] args) {
     Scanner leer = new Scanner(System.in);
     int filas = 6;

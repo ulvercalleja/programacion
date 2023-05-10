@@ -66,7 +66,7 @@ public class EmpresaAgroalimentaria {
 
   public void cargarCsv() {
     try {
-      FileReader lectorFrescos = new FileReader("ProductosCongelados.csv");
+      FileReader lectorFrescos = new FileReader("ProductoFresco.csv");
       BufferedReader bufferFrescos = new BufferedReader(lectorFrescos);
       String linea;
          while ((linea = bufferFrescos.readLine()) != null) {
@@ -74,9 +74,35 @@ public class EmpresaAgroalimentaria {
          }
         lectorFrescos.close();
         bufferFrescos.close(); 
-      } catch (IOException e) {
+    } catch (IOException e) {
         System.out.println("Se ha producido un error :()");
-      }
+    }
+
+    try {
+      FileReader lectorRefrigerados = new FileReader("ProductoRefrigerado.csv");
+      BufferedReader bufferRefrigerados = new BufferedReader(lectorRefrigerados);
+      String linea;
+         while ((linea = bufferRefrigerados.readLine()) != null) {
+            System.out.println(linea);
+         }
+         lectorRefrigerados.close();
+         bufferRefrigerados.close(); 
+    } catch (IOException e) {
+        System.out.println("Se ha producido un error :()");
+    }
+
+    try {
+      FileReader lectorCongelados = new FileReader("ProductosCongelados.csv");
+      BufferedReader bufferCongelados = new BufferedReader(lectorCongelados);
+      String linea;
+         while ((linea = bufferCongelados.readLine()) != null) {
+            System.out.println(linea);
+         }
+         lectorCongelados.close();
+         bufferCongelados.close(); 
+    } catch (IOException e) {
+        System.out.println("Se ha producido un error :()");
+    }
   }
   
 }

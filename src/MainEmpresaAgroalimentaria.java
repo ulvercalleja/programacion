@@ -55,6 +55,8 @@ public class MainEmpresaAgroalimentaria {
                 empresa.addProductosCongelados(congeladosPorNitro);
 
                 empresa.guardarCsv();
+            break;
+            
             case 2:
                 empresa.cargarCsv();
             break;

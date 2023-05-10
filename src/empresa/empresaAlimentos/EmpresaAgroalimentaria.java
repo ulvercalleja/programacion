@@ -2,8 +2,10 @@ package empresa.empresaAlimentos;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.io.IOException;
 import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class EmpresaAgroalimentaria {
   String nombre;
@@ -51,8 +53,8 @@ public class EmpresaAgroalimentaria {
     } catch (Exception e) {
       System.out.println("Se ha producido un error :()");
     }
-    /*try {
-      FileWriter escritorCongelados = new FileWriter("ProductoCongeladoPorAgua.csv");
+    try {
+      FileWriter escritorCongelados = new FileWriter("ProductosCongelados.csv",true);
       for (ProductosCongelados congeladosPorAgua : listaCongelados) {
         escritorCongelados.write(congeladosPorAgua.toCsv() + "\n");
       }
@@ -60,7 +62,21 @@ public class EmpresaAgroalimentaria {
     } catch (Exception e) {
       System.out.println("Se ha producido un error :()");
     }
-    */
+  }
+
+  public void cargarCsv() {
+    try {
+      FileReader lectorFrescos = new FileReader("ProductosCongelados.csv");
+      BufferedReader bufferFrescos = new BufferedReader(lectorFrescos);
+      String linea;
+         while ((linea = bufferFrescos.readLine()) != null) {
+            System.out.println(linea);
+         }
+        lectorFrescos.close();
+        bufferFrescos.close(); 
+      } catch (IOException e) {
+        System.out.println("Se ha producido un error :()");
+      }
   }
   
 }

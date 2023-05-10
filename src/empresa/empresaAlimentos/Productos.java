@@ -8,7 +8,8 @@ public abstract class Productos {
   String numLote;
   String paisOrigen;
   LocalDate fechaEnvasado;
-
+  static final String REGEX_NUMERO_LOTE = "[A-Z]{2}-[0-9]{4}-[0-9]{1,5}";
+  
   // Constructor que inicializa los valores de las variables de instancia
   public Productos(String nombre, String fechaCaducidad, String numLote, String paisOrigen, String fechaEnvasado) {
     // Convierte las cadenas String a objetos LocalDate y los asigna a las variables
@@ -19,9 +20,10 @@ public abstract class Productos {
     this.paisOrigen = paisOrigen;
     this.fechaEnvasado = LocalDate.parse(fechaEnvasado);
   }
-  
+
   public String toCsv() {
     return nombre + "," + fechaCaducidad + "," + numLote
         + "," + fechaEnvasado + "," + paisOrigen;
   }
+
 }

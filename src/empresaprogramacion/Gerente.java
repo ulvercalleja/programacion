@@ -2,7 +2,7 @@ package empresaprogramacion;
 
 public class Gerente extends Empleado {
 
-  String departamento;
+  private String departamento;
 
   public Gerente(String idEmpleado, String nombre, double sueldo, String departamento) throws ParametroInvalidoException {
     super(idEmpleado, nombre, sueldo, TipoEmpleado.GERENTE);

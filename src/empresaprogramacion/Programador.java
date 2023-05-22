@@ -1,9 +1,9 @@
 package empresaprogramacion;
 
 public class Programador extends Empleado {
-  boolean esJunior;
-  String lenguaje;
-  boolean plusIdioma;
+  private boolean esJunior;
+  private String lenguaje;
+  private boolean plusIdioma;
 
   public Programador(String idEmpleado, String nombre, double sueldo, String lenguaje,
       boolean esJunior, boolean plusIdioma) throws ParametroInvalidoException {

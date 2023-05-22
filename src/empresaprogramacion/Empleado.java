@@ -1,11 +1,35 @@
 package empresaprogramacion;
+import java.util.Comparator;
 
 public abstract class Empleado implements Comparable<Empleado> {
-  String idEmpleado;
-  String nombre;
-  double sueldo;
-  TipoEmpleado tipo;
-  final static String idEmpleadoRegexp = "[A-Z]{1}[8]{1}[0-9]{3}";
+  private String idEmpleado;
+  private String nombre;
+  private double sueldo;
+  private TipoEmpleado tipo;
+  private final static String idEmpleadoRegexp = "[A-Z]{1}[8]{1}[0-9]{3}";
+
+  public static final Comparator<Empleado> COMPARATOR_NOMBRE = new Comparator<Empleado>() {
+    @Override
+    public int compare(Empleado o1, Empleado o2) {
+      // Compara nombres, se usará para ordenarlos alfabeticamente
+      return o1.nombre.compareTo(o2.nombre);
+    }
+  };
+
+  public static final Comparator<Empleado> COMPARATOR_SUELDO = new Comparator<Empleado>() {
+    @Override
+    public int compare(Empleado o1, Empleado o2) {
+      // Compara sueldos, se usará para ordenarlos por dicha caracteristica
+      Double sueldo1 = Double.valueOf(o1.sueldo);
+      Double sueldo2 = Double.valueOf(o2.sueldo);
+      return sueldo1.compareTo(sueldo2);
+    }
+  };
+
+  public int compareTo(Empleado o) {
+    // Compara nombres, se usará para ordenarlos alfabeticamente
+    return nombre.compareTo(o.nombre);
+  }
 
   public Empleado(String idEmpleado, String nombre, double sueldo, TipoEmpleado tipo)
       throws ParametroInvalidoException {
@@ -51,8 +75,5 @@ public abstract class Empleado implements Comparable<Empleado> {
     return "ID Empleado: " + idEmpleado + ", Nombre: " + nombre + ", sueldo: " + sueldo;
   }
 
-  public int compareTo(Empleado o) {
-    // Compara nombres, se usará para ordenarlos alfabeticamente
-    return nombre.compareTo(o.nombre);
-  }
+
 }

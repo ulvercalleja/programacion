@@ -4,24 +4,23 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Empresa{
-  public String nombre;
-  Map<String, Empleado> mapaEmpleados;
+public class Empresa {
+  private String nombre;
+  
+  private Map<String, Empleado> mapaEmpleados;
 
   public Empresa(String nombre) {
     this.nombre = nombre;
     this.mapaEmpleados = new TreeMap<>();
   }
 
-  public void addEmpleado(Empleado empleado) {
+  public void addEmpleado(Empleado empleado) throws ParametroInvalidoException {
     mapaEmpleados.put(empleado.getIdEmpleado(), empleado);
-    /*if (mapa.containsKey(getIdEmpleado())){
-      throw new ParametroInvalidoException("El id introducido ya existe .");
-    }*/
   }
 
   public void guardarEnCSV(String archivoGuardar) {
@@ -73,16 +72,27 @@ public class Empresa{
   }
 
   public String toStringOrdenSueldo() {
-    // TODO ordenar todos los empleados por orden de sueldo de MAYOR A MENOR
+    // Ordenar todos los empleados por orden de sueldo de MAYOR A MENOR
     String cadena = "# Listado de empleados ordenados por sueldo: \n";
+
+    ArrayList<Empleado> ordenSueldo = new ArrayList<>(mapaEmpleados.values());
+    Collections.sort(ordenSueldo, Empleado.COMPARATOR_SUELDO.reversed());
+
+    for (Empleado empleado : ordenSueldo) {
+      cadena += empleado.toString() + "\n";
+    }
     return cadena;
   }
 
   public String toStringOrdenNombre() {
     // Ordenar todos los empleados por orden de nombre alfabético
     String cadena = "# Listado de empleados ordenados por su nombre: \n";
-    //Collections.sort(mapaEmpleados.values());
-    for (Empleado empleado : mapaEmpleados.values()) {
+
+    ArrayList <Empleado> ordenNombre = new ArrayList<>(mapaEmpleados.values());
+
+    Collections.sort(ordenNombre, Empleado.COMPARATOR_NOMBRE);
+
+    for (Empleado empleado : ordenNombre) {
       cadena += empleado.toString() + "\n";
     }
     return cadena;

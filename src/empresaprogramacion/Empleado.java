@@ -21,10 +21,15 @@ public abstract class Empleado implements Comparable<Empleado> {
     this.sueldo = sueldo;
     if (!idEmpleado.matches(idEmpleadoRegexp)) {
       // Comprueba id cumpla el patrón
-      throw new ParametroInvalidoException("El id introducide contiene caracteres no soportados .");
+      throw new ParametroInvalidoException("El id introducido contiene caracteres no soportados .");
     }
+
     this.idEmpleado = idEmpleado;
     this.tipo = tipo;
+  }
+  
+  public String getIdEmpleado() {
+    return idEmpleado;
   }
 
   /* NO SE USA

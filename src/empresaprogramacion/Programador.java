@@ -21,7 +21,7 @@ public class Programador extends Empleado {
   }
 
   public String esJunior() {
-    //Metodo para devolver la cadena del boolean
+    //Metodo para devolver la cadena mediante un boolean, mejor hacerlo con operador ternario
     if (esJunior) {
       return "es junior";
     } else

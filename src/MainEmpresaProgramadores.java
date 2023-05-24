@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-import empresaprogramacion.Empleado;
-import empresaprogramacion.Empresa;
-import empresaprogramacion.Gerente;
-import empresaprogramacion.ParametroInvalidoException;
-import empresaprogramacion.Programador;
+import empresa.empresaprogramacion.Empleado;
+import empresa.empresaprogramacion.Empresa;
+import empresa.empresaprogramacion.Gerente;
+import empresa.empresaprogramacion.ParametroInvalidoException;
+import empresa.empresaprogramacion.Programador;
 
 public class MainEmpresaProgramadores {
 

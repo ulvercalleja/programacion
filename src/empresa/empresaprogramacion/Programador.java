@@ -1,4 +1,4 @@
-package empresaprogramacion;
+package empresa.empresaprogramacion;
 
 public class Programador extends Empleado {
   private boolean esJunior;

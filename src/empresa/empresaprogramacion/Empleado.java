@@ -1,4 +1,4 @@
-package empresaprogramacion;
+package empresa.empresaprogramacion;
 import java.util.Comparator;
 
 public abstract class Empleado implements Comparable<Empleado> {

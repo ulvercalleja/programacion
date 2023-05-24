@@ -1,4 +1,4 @@
-package empresaprogramacion;
+package empresa.empresaprogramacion;
 
 public enum TipoEmpleado {
   GERENTE, PROGRAMADOR

@@ -1,4 +1,4 @@
-package empresaprogramacion;
+package empresa.empresaprogramacion;
 
 import java.io.FileReader;
 import java.io.BufferedReader;
